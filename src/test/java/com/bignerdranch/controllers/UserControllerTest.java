@@ -1,5 +1,6 @@
 package com.bignerdranch.controllers;
 
+import com.bignerdranch.service.UserService;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -59,7 +60,7 @@ public class UserControllerTest {
     void shouldAddUsersController() {
         mockMvc.perform(
                 post("/api/user")
-                        .contentType(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"test\"}")
         ).andExpect(status().isOk());
     }
 

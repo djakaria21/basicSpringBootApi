@@ -1,5 +1,6 @@
 package com.bignerdranch.controllers;
 
+import com.bignerdranch.service.PostService;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
