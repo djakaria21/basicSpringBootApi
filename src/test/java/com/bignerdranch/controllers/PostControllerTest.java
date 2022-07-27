@@ -41,7 +41,7 @@ public class PostControllerTest {
     @Test
     void shouldCallUsersPostController() {
         mockMvc.perform(
-                get("/api/user/1/posts")
+                get("/api/posts/user/1")
                         .contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk());
     }
@@ -72,7 +72,7 @@ public class PostControllerTest {
     void shouldUpdatePostController() {
         mockMvc.perform(
                 post("/api/posts/1")
-                        .contentType(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"test\"}")
         ).andExpect(status().isOk());
     }
 

@@ -3,6 +3,7 @@ package com.bignerdranch.controllers;
 import com.bignerdranch.entity.User;
 import com.bignerdranch.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,8 @@ import java.util.Collection;
 @RequestMapping(value = "api/user")
 public class UserController {
 
+
+    @Autowired
     private final UserService userService;
 
     @GetMapping
