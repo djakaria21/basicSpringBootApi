@@ -16,13 +16,11 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class Post {
 
-
-    Integer userId;
-
     @Id
     @GeneratedValue
     Integer id;
 
+    Integer userId;
     String title;
     String body;
 

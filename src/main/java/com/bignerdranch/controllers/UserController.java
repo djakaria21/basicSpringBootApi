@@ -1,6 +1,6 @@
 package com.bignerdranch.controllers;
 
-import com.bignerdranch.entity.User;
+import com.bignerdranch.entity.Users;
 import com.bignerdranch.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,23 +20,23 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public ResponseEntity<Collection<User>> getAllUsers() {
+    public ResponseEntity<Collection<Users>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Integer id) {
+    public ResponseEntity<Users> getUser(@PathVariable Integer id) {
         return ResponseEntity.ok(userService.getUser(id));
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        return ResponseEntity.ok(userService.save(user));
+    public ResponseEntity<Users> createUser(@RequestBody Users users) {
+        return ResponseEntity.ok(userService.save(users));
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User user) {
-        return ResponseEntity.ok(userService.update(id, user));
+    public ResponseEntity<Users> updateUser(@PathVariable Integer id, @RequestBody Users users) {
+        return ResponseEntity.ok(userService.update(id, users));
     }
 
     @DeleteMapping("/{id}")
